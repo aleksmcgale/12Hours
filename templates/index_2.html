@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>12Hours</title>
+
+    <link rel="stylesheet" href="../static/index.css">
+
+
+</head>
+<body>
+<div>
+   <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">12 Hours</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Donate</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Setting</a>
+  </li>
+
+</ul>
+</div>
+
+<br>
+<div class="container"id="middle">
+  <h1 style="color:black;">{{ object }} goes in {{ container }}</h1>
+  </div>
+    <div  class="row">
+      <div class="col" id="uploadedImage">
+          <form action="{{ url_for(".landing_page") }}">
+              <button type="submit" class="abtn btn-outline btn-xl">Analyze Another Image</button>
+          </form>
+      </div>
+  </div>
+</div>
+<div id="popUpText" class="hidden">
+    <h1>Is the photo of a ?</h1>
+    <div class="row">
+        <div class="col">
+            <button class="abtn btn-outline btn-xl" type="button" onclick="rightGuess(true)">
+                Yes!
+            </button>
+        </div>
+        <div class="col">
+            <button class="abtn btn-outline btn-xl" type="button" onclick="rightGuess(false)">
+                No...
+            </button>
+        </div>
+
+    </div>
+</div>
+<h1 id="area"></h1>
+
+<div id="rectangle1"></div>
+<div id="rectangle2"></div>
+<div id="rectangle3"></div>
+<div id="rectangle4"></div>
+
+
+
+
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(350)
+                    .height(350);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function rightGuess(t) {
+        if (t == true){
+
+        }else if (t == false){
+
+        }
+
+    }
+
+    function aiConfirmation() {
+        var item = document.getElementById("popUpText");
+        if (item) {
+            if (item.className == 'hidden'){
+                item.className = 'unhidden';
+
+            }else{
+                item.className = 'hidden';
+            }
+        }
+
+
+
+
+    }
+
+
+
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+</body>
+</html>
